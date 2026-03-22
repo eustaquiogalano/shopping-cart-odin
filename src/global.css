@@ -1,11 +1,18 @@
-html {
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+:root {
+  --ultra-light-brown: #fff8f0;
+  --light-brown: #c08552;
+  --brown: #8c5a3c;
+  --dark-brown: #4b2e2b;
+}
 
-  html {
-    font-size: 16px;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--dark-brown);
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--ultra-light-brown);
 }
