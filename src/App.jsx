@@ -32,9 +32,7 @@ function App() {
           </NavLink>
         </nav>
       </header>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </>
   );
 }
