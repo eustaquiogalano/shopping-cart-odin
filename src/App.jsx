@@ -1,5 +1,12 @@
+import { Outlet } from "react-router";
+
 function App() {
-  return <h1>React Template</h1>;
+  return (
+    <>
+      <header></header>
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
