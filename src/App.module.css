@@ -1,0 +1,26 @@
+.header {
+  height: 8vh;
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navLinks {
+  height: 90%;
+  width: 20%;
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+}
+
+.active {
+  background-color: gray;
+}
