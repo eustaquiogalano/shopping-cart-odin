@@ -10,6 +10,7 @@ const routes = [
       { index: true, Component: Home },
       { path: "shop", Component: Shop },
     ],
+    ErrorBoundary: ErrorPage,
   },
 ];
 
