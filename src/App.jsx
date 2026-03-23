@@ -1,7 +1,10 @@
 import { NavLink, Outlet } from "react-router";
 import styles from "./App.module.css";
+import useDataFetcher from "./hooks/useDataFetcher";
 
 function App() {
+  const { laptops, error } = useDataFetcher();
+
   return (
     <>
       <header className={styles.header}>
@@ -32,7 +35,7 @@ function App() {
           </NavLink>
         </nav>
       </header>
-      <Outlet />
+      <Outlet context={{ laptops, error }} />
     </>
   );
 }
