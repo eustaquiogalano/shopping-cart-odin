@@ -3,6 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 92vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
