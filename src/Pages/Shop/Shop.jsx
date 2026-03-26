@@ -24,7 +24,7 @@ export default function Shop() {
         {laptops &&
           laptops.map((laptop) => {
             return (
-              <Card maxW="sm">
+              <Card maxW="sm" key={laptop.id}>
                 <CardBody>
                   <Image
                     src={laptop.images[0]}
