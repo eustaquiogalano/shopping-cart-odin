@@ -33,11 +33,12 @@ export default function Cart() {
                 variant="outline"
                 display="flex"
                 flexShrink="0"
+                p="1rem"
               >
                 <Image
                   objectFit="cover"
                   maxW={{ base: "100%", sm: "200px" }}
-                  src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+                  src={laptop.images[1]}
                   alt="Caffe Latte"
                 />
 
@@ -46,12 +47,18 @@ export default function Cart() {
                     <Heading size="md">{laptop.title}</Heading>
                   </CardBody>
 
-                  <CardFooter w="25%" display="flex" gap=".5rem">
-                    <Button variant="solid" colorScheme="blue">
+                  <CardFooter display="flex" gap=".5rem">
+                    <Button variant="solid" colorScheme="brown">
                       +
                     </Button>
-                    <Input placeholder="0" textAlign="center"></Input>
-                    <Button variant="solid" colorScheme="blue">
+                    <Input
+                      placeholder="0"
+                      textAlign="center"
+                      w="20%"
+                      type="number"
+                      colorScheme="brown"
+                    />
+                    <Button variant="solid" colorScheme="brown">
                       -
                     </Button>
                   </CardFooter>
@@ -64,7 +71,7 @@ export default function Cart() {
                   justifyContent="center"
                   w="20%"
                 >
-                  <StatLabel fontSize="1rem">Total Amount:</StatLabel>
+                  <StatLabel fontSize="1rem">Price:</StatLabel>
                   <StatNumber>£0.00</StatNumber>
                 </Stat>
               </Card>
@@ -72,7 +79,7 @@ export default function Cart() {
           })}
       </div>
       <div className={styles.cartTotalAmount}>
-        <Button colorScheme="blue" w="30%" h="60%" fontSize="1.5rem">
+        <Button colorScheme="brown" w="30%" h="60%" fontSize="1.5rem">
           Checkout
         </Button>
         <Stat flex="0 0 auto">
