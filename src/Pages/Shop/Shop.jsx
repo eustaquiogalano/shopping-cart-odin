@@ -42,14 +42,10 @@ export default function Shop() {
                 <Divider bg="darkBrown" />
                 <CardFooter>
                   <ButtonGroup spacing="2">
-                    <Button
-                      variant="solid"
-                      bgColor="brown"
-                      color="ultraLightBrown"
-                    >
+                    <Button variant="solid" colorScheme="brown">
                       Buy now
                     </Button>
-                    <Button variant="ghost" color="darkBrown">
+                    <Button variant="ghost" colorScheme="brown">
                       Add to cart
                     </Button>
                   </ButtonGroup>
