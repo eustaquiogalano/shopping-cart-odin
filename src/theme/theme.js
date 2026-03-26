@@ -2,9 +2,17 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
   colors: {
-    ultraLightBrown: "#fff8f0",
-    lightBrown: "#c08552",
-    brown: "#8c5a3c",
-    darkBrown: "#4b2e2b",
+    brown: {
+      500: "#8c5a3c",
+      600: "#c08552",
+      700: "#4b2e2b",
+    },
+  },
+  components: {
+    Input: {
+      defaultProps: {
+        focusBorderColor: "brown.500",
+      },
+    },
   },
 });
