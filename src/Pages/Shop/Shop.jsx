@@ -16,7 +16,9 @@ import {
 import styles from "./Shop.module.css";
 
 export default function Shop() {
-  const { laptops } = useOutletContext();
+  const { laptops, error, addLaptopToCart } = useOutletContext();
+
+  console.log(laptops);
 
   return (
     <main className={styles.main}>
@@ -40,12 +42,25 @@ export default function Shop() {
                   </Stack>
                 </CardBody>
                 <Divider bg="darkBrown" />
+                {laptop.addedToCart && "Added to Cart"}
                 <CardFooter>
                   <ButtonGroup spacing="2">
-                    <Button variant="solid" colorScheme="brown">
+                    <Button
+                      variant="solid"
+                      colorScheme="brown"
+                      onClick={() => {
+                        addLaptopToCart(laptop.id);
+                      }}
+                    >
                       Buy now
                     </Button>
-                    <Button variant="ghost" colorScheme="brown">
+                    <Button
+                      variant="ghost"
+                      colorScheme="brown"
+                      onClick={() => {
+                        addLaptopToCart(laptop.id);
+                      }}
+                    >
                       Add to cart
                     </Button>
                   </ButtonGroup>

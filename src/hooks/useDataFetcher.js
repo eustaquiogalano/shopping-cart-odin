@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import addToCart from "../utils/addToCart/addToCart";
 
 export default function useDataFetcher() {
-  const [laptops, setlaptops] = useState();
-  const [error, setError] = useState();
+  const [laptops, setlaptops] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getData() {
@@ -21,5 +22,9 @@ export default function useDataFetcher() {
     getData();
   }, []);
 
-  return { laptops, error };
+  const addLaptopToCart = (productID) => {
+    setlaptops((prev) => addToCart(productID, prev));
+  };
+
+  return { laptops, error, addLaptopToCart };
 }

@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 import useDataFetcher from "./hooks/useDataFetcher";
 
 function App() {
-  const { laptops, error } = useDataFetcher();
+  const { laptops, error, addLaptopToCart } = useDataFetcher();
 
   return (
     <>
@@ -35,7 +35,7 @@ function App() {
           </NavLink>
         </nav>
       </header>
-      <Outlet context={{ laptops, error }} />
+      <Outlet context={{ laptops, error, addLaptopToCart }} />
     </>
   );
 }
