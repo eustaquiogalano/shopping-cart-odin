@@ -18,7 +18,8 @@ import styles from "./Cart.module.css";
 import { useOutletContext } from "react-router";
 
 export default function Cart() {
-  const { laptops, error } = useOutletContext();
+  const { laptops, error, incrementQuantity, decrementQuantity } =
+    useOutletContext();
 
   return (
     <main className={styles.cartMain}>
@@ -49,17 +50,29 @@ export default function Cart() {
                     </CardBody>
 
                     <CardFooter display="flex" gap=".5rem">
-                      <Button variant="solid" colorScheme="brown">
+                      <Button
+                        variant="solid"
+                        colorScheme="brown"
+                        onClick={() => {
+                          incrementQuantity(laptop.id);
+                        }}
+                      >
                         +
                       </Button>
                       <Input
-                        placeholder="0"
+                        placeholder={laptop.quantity}
                         textAlign="center"
                         w="20%"
                         type="number"
                         colorScheme="brown"
                       />
-                      <Button variant="solid" colorScheme="brown">
+                      <Button
+                        variant="solid"
+                        colorScheme="brown"
+                        onClick={() => {
+                          decrementQuantity(laptop.id);
+                        }}
+                      >
                         -
                       </Button>
                     </CardFooter>
@@ -73,7 +86,7 @@ export default function Cart() {
                     w="20%"
                   >
                     <StatLabel fontSize="1rem">Price:</StatLabel>
-                    <StatNumber>£0.00</StatNumber>
+                    <StatNumber>${laptop.price * laptop.quantity}</StatNumber>
                   </Stat>
                 </Card>
               )

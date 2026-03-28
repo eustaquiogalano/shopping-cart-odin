@@ -26,5 +26,30 @@ export default function useDataFetcher() {
     setlaptops((prev) => addToCart(productID, prev));
   };
 
-  return { laptops, error, addLaptopToCart };
+  const incrementQuantity = (productID) => {
+    setlaptops((prev) => {
+      return prev.map((laptop) => {
+        return laptop.id === productID
+          ? { ...laptop, quantity: laptop.quantity + 1 }
+          : laptop;
+      });
+    });
+  };
+
+  const decrementQuantity = (productID) => {
+    setlaptops((prev) => {
+      return prev.map((laptop) => {
+        return laptop.id === productID
+          ? { ...laptop, quantity: laptop.quantity - 1 }
+          : laptop;
+      });
+    });
+  };
+  return {
+    laptops,
+    error,
+    addLaptopToCart,
+    incrementQuantity,
+    decrementQuantity,
+  };
 }
