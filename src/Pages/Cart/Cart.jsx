@@ -21,6 +21,17 @@ export default function Cart() {
   const { laptops, error, incrementQuantity, decrementQuantity } =
     useOutletContext();
 
+  const totalAmount = laptops.reduce((acc, laptop) => {
+    if (laptop.addedToCart) {
+      console.log(laptop);
+
+      return acc + laptop.quantity * laptop.price;
+    }
+    return acc;
+  }, 0);
+
+  console.log(totalAmount);
+
   return (
     <main className={styles.cartMain}>
       <div className={styles.cartList}>
@@ -47,6 +58,7 @@ export default function Cart() {
                   <Stack flex="1">
                     <CardBody>
                       <Heading size="md">{laptop.title}</Heading>
+                      <p>${laptop.price}</p>
                     </CardBody>
 
                     <CardFooter display="flex" gap=".5rem">
@@ -85,7 +97,7 @@ export default function Cart() {
                     justifyContent="center"
                     w="20%"
                   >
-                    <StatLabel fontSize="1rem">Price:</StatLabel>
+                    <StatLabel fontSize="1rem">Total Price:</StatLabel>
                     <StatNumber>${laptop.price * laptop.quantity}</StatNumber>
                   </Stat>
                 </Card>
@@ -99,7 +111,7 @@ export default function Cart() {
         </Button>
         <Stat flex="0 0 auto">
           <StatLabel fontSize="1.5rem">Total Amount:</StatLabel>
-          <StatNumber>£0.00</StatNumber>
+          <StatNumber>£{totalAmount || 0}</StatNumber>
           {/* <StatHelpText>Feb 12 - Feb 28</StatHelpText> */}
         </Stat>
       </div>
