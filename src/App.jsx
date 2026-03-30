@@ -11,6 +11,13 @@ function App() {
     decrementQuantity,
   } = useDataFetcher();
 
+  const cartListCount = laptops.reduce((acc, laptop) => {
+    if (laptop.addedToCart) {
+      return acc + 1;
+    }
+    return acc;
+  }, 0);
+
   return (
     <>
       <header className={styles.header}>
@@ -37,6 +44,7 @@ function App() {
               `${styles.navLinks} ${isActive ? styles.active : ""}`
             }
           >
+            <span>{cartListCount}</span>
             Cart
           </NavLink>
         </nav>
