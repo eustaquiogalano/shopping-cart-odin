@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-import addToCart from "../utils/addToCart/addToCart";
+import { useEffect, useReducer } from "react";
+import cartReducer from "../reducers/cartReducer";
 
 export default function useDataFetcher() {
-  const [laptops, setlaptops] = useState([]);
-  const [error, setError] = useState(null);
+  const [laptops, dispatch] = useReducer(cartReducer, []);
+  // const [laptops, setlaptops] = useState([]);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getData() {
@@ -13,9 +14,9 @@ export default function useDataFetcher() {
         );
         const result = await request.json();
 
-        setlaptops(result.products);
+        dispatch({ type: "add_to_cart", productList: result.products });
       } catch (error) {
-        setError(error);
+        console.log(error);
       }
     }
 
@@ -23,31 +24,19 @@ export default function useDataFetcher() {
   }, []);
 
   const addLaptopToCart = (productID) => {
-    setlaptops((prev) => addToCart(productID, prev));
+    dispatch({ type: "add_to_cart", productID, productList: laptops });
   };
 
   const incrementQuantity = (productID) => {
-    setlaptops((prev) => {
-      return prev.map((laptop) => {
-        return laptop.id === productID
-          ? { ...laptop, quantity: laptop.quantity + 1 }
-          : laptop;
-      });
-    });
+    dispatch({ type: "increment_quantity", productID });
   };
 
   const decrementQuantity = (productID) => {
-    setlaptops((prev) => {
-      return prev.map((laptop) => {
-        return laptop.id === productID
-          ? { ...laptop, quantity: laptop.quantity - 1 }
-          : laptop;
-      });
-    });
+    dispatch({ type: "decrement_quantity", productID });
   };
   return {
     laptops,
-    error,
+    // error,
     addLaptopToCart,
     incrementQuantity,
     decrementQuantity,
