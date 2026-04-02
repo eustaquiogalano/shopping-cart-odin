@@ -18,19 +18,8 @@ import styles from "./Cart.module.css";
 import { useOutletContext } from "react-router";
 
 export default function Cart() {
-  const { laptops, error, incrementQuantity, decrementQuantity } =
+  const { laptops, totalPrice, incrementQuantity, decrementQuantity } =
     useOutletContext();
-
-  const totalAmount = laptops.reduce((acc, laptop) => {
-    if (laptop.addedToCart) {
-      console.log(laptop);
-
-      return acc + laptop.quantity * laptop.price;
-    }
-    return acc;
-  }, 0);
-
-  console.log(totalAmount);
 
   return (
     <main className={styles.cartMain}>
@@ -111,7 +100,7 @@ export default function Cart() {
         </Button>
         <Stat flex="0 0 auto">
           <StatLabel fontSize="1.5rem">Total Amount:</StatLabel>
-          <StatNumber>£{totalAmount || 0}</StatNumber>
+          <StatNumber>£{totalPrice || 0}</StatNumber>
           {/* <StatHelpText>Feb 12 - Feb 28</StatHelpText> */}
         </Stat>
       </div>

@@ -5,6 +5,7 @@ import useDataFetcher from "./hooks/useDataFetcher";
 function App() {
   const {
     laptops,
+    totalPrice,
     error,
     addLaptopToCart,
     incrementQuantity,
@@ -52,6 +53,7 @@ function App() {
       <Outlet
         context={{
           laptops,
+          totalPrice,
           error,
           addLaptopToCart,
           incrementQuantity,

@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useMemo, useReducer } from "react";
 import cartReducer from "../reducers/cartReducer";
 
 export default function useDataFetcher() {
@@ -23,6 +23,17 @@ export default function useDataFetcher() {
     getData();
   }, []);
 
+  const totalPrice = useMemo(() => {
+    return laptops.reduce((acc, laptop) => {
+      if (laptop.addedToCart) {
+        console.log(laptop);
+
+        return acc + laptop.quantity * laptop.price;
+      }
+      return acc;
+    }, 0);
+  }, [laptops]);
+
   const addLaptopToCart = (productID) => {
     dispatch({ type: "add_to_cart", productID, productList: laptops });
   };
@@ -34,8 +45,10 @@ export default function useDataFetcher() {
   const decrementQuantity = (productID) => {
     dispatch({ type: "decrement_quantity", productID });
   };
+
   return {
     laptops,
+    totalPrice,
     // error,
     addLaptopToCart,
     incrementQuantity,
