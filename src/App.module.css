@@ -1,17 +1,14 @@
 .header {
-  height: 8%;
-  width: 100vw;
 }
 
 .nav {
-  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .navLinks {
-  height: 90%;
+  height: 4rem;
   width: 20%;
   transition: all 0.5s ease-in-out;
   display: flex;

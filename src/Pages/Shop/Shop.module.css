@@ -1,4 +1,4 @@
 .main {
-  height: 100%;
-  margin: 100px 20%;
+  flex: 1;
+  padding: 3rem 10%;
 }

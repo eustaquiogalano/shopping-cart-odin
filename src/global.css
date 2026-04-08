@@ -53,14 +53,14 @@ html {
 }
 
 #root {
-  height: 100vh;
-  width: 100vw;
-  overflow-y: auto;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: "Geist Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

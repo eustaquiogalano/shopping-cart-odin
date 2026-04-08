@@ -2,8 +2,7 @@
   background-image: url(../../assets/home-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 92vh;
-  width: 100vw;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
