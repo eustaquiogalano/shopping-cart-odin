@@ -1,17 +1,16 @@
 import { useOutletContext } from "react-router";
+
 import {
-  Button,
-  ButtonGroup,
   Card,
-  CardBody,
+  CardAction,
+  CardDescription,
   CardFooter,
-  Divider,
-  Grid,
-  Heading,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@/components/ui/card";
+
+import { Button } from "@/components/ui/button";
 
 import styles from "./Shop.module.css";
 
@@ -22,53 +21,41 @@ export default function Shop() {
 
   return (
     <main className={styles.main}>
-      <Grid templateColumns="repeat(3, 1fr)" gap="6" h="full">
+      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] grid-rows-auto  gap-[1rem] h-full p-[1rem]">
         {laptops &&
           laptops.map((laptop) => {
             return (
-              <Card maxW="sm" key={laptop.id}>
-                <CardBody>
-                  <Image
-                    src={laptop.images[0]}
-                    alt="Green double couch with wooden legs"
-                    borderRadius="lg"
-                  />
-                  <Stack mt="6" spacing="3">
-                    <Heading size="md">{laptop.title}</Heading>
-                    <Text>{laptop.description}</Text>
-                    <Text color="darkBrown" fontSize="2xl">
-                      $ {laptop.price}
-                    </Text>
-                  </Stack>
-                </CardBody>
-                <Divider bg="darkBrown" />
-                {laptop.addedToCart && "Added to Cart"}
-                <CardFooter>
-                  <ButtonGroup spacing="2">
+              <Card className="w-full h-fit overflow-hidden p-0">
+                <img
+                  src={laptop.images[0]}
+                  alt=""
+                  className="w-full h-[180px] object-cover"
+                />
+                <CardContent className="p-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="font-medium">{laptop.title}</p>
+                      {/* <p className="text-sm text-muted-foreground">
+                        {laptop.description}
+                      </p> */}
+                    </div>
+                    <p className="font-medium">${laptop.price}</p>
+                  </div>
+                  <div className="flex gap-2 mt-4">
+                    <Button className="flex-1">Buy now</Button>
                     <Button
-                      variant="solid"
-                      colorScheme="brown"
-                      onClick={() => {
-                        addLaptopToCart(laptop.id);
-                      }}
-                    >
-                      Buy now
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      colorScheme="brown"
-                      onClick={() => {
-                        addLaptopToCart(laptop.id);
-                      }}
+                      variant="outline"
+                      className="flex-1"
+                      onClick={() => addLaptopToCart(laptop.id, laptops)}
                     >
                       Add to cart
                     </Button>
-                  </ButtonGroup>
-                </CardFooter>
+                  </div>
+                </CardContent>
               </Card>
             );
           })}
-      </Grid>
+      </div>
     </main>
   );
 }

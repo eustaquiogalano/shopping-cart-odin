@@ -1,21 +1,8 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  Center,
-  Heading,
-  Image,
-  Input,
-  Stack,
-  Stat,
-  StatHelpText,
-  StatLabel,
-  StatNumber,
-} from "@chakra-ui/react";
-
 import styles from "./Cart.module.css";
 import { useOutletContext } from "react-router";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function Cart() {
   const { laptops, totalPrice, incrementQuantity, decrementQuantity } =
@@ -28,81 +15,71 @@ export default function Cart() {
           laptops.map((laptop) => {
             return (
               laptop.addedToCart && (
-                <Card
-                  direction={{ base: "column", sm: "row" }}
-                  overflow="hidden"
-                  variant="outline"
-                  display="flex"
-                  flexShrink="0"
-                  p="1rem"
-                  key={laptop.id}
-                >
-                  <Image
-                    objectFit="cover"
-                    maxW={{ base: "100%", sm: "200px" }}
-                    src={laptop.images[1]}
-                    alt="Caffe Latte"
-                  />
-
-                  <Stack flex="1">
-                    <CardBody>
-                      <Heading size="md">{laptop.title}</Heading>
-                      <p>${laptop.price}</p>
-                    </CardBody>
-
-                    <CardFooter display="flex" gap=".5rem">
-                      <Button
-                        variant="solid"
-                        colorScheme="brown"
-                        onClick={() => {
-                          incrementQuantity(laptop.id);
-                        }}
-                      >
-                        +
-                      </Button>
-                      <Input
-                        placeholder={laptop.quantity}
-                        textAlign="center"
-                        w="20%"
-                        type="number"
-                        colorScheme="brown"
+                <Card>
+                  <CardContent className="p-4">
+                    <div className="flex gap-3 items-center">
+                      <img
+                        src={laptop.images[2]}
+                        alt={laptop.title}
+                        className="w-18 h-18 object-cover rounded-md flex-shrink-0"
                       />
-                      <Button
-                        variant="solid"
-                        colorScheme="brown"
-                        onClick={() => {
-                          decrementQuantity(laptop.id);
-                        }}
-                      >
-                        -
-                      </Button>
-                    </CardFooter>
-                  </Stack>
-
-                  <Stat
-                    flex="0 0 auto"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    w="20%"
-                  >
-                    <StatLabel fontSize="1rem">Total Price:</StatLabel>
-                    <StatNumber>${laptop.price * laptop.quantity}</StatNumber>
-                  </Stat>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex justify-between items-start">
+                          <p className="text-sm font-medium">{laptop.title}</p>
+                          <p className="text-sm font-medium pl-2">
+                            ${laptop.price}
+                          </p>
+                        </div>
+                        <div className="flex justify-between items-center mt-2">
+                          <div className="flex items-center gap-2 border rounded-md px-2 py-0.5">
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="h-5 w-5"
+                              onClick={() => {
+                                decrementQuantity(laptop.id);
+                              }}
+                            >
+                              −
+                            </Button>
+                            <span className="text-sm w-4 text-center">
+                              {laptop.quantity}
+                            </span>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="h-5 w-5"
+                              onClick={() => {
+                                incrementQuantity(laptop.id);
+                              }}
+                            >
+                              +
+                            </Button>
+                          </div>
+                          <p className="text-sm text-muted-foreground">
+                            ${(laptop.price * laptop.quantity).toFixed(2)}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
                 </Card>
               )
             );
           })}
       </div>
       <div className={styles.cartTotalAmount}>
-        <Button colorScheme="brown" w="30%" h="60%" fontSize="1.5rem">
-          Checkout
-        </Button>
-        <Stat flex="0 0 auto">
-          <StatLabel fontSize="1.5rem">Total Amount:</StatLabel>
-          <StatNumber>£{totalPrice || 0}</StatNumber>
-          {/* <StatHelpText>Feb 12 - Feb 28</StatHelpText> */}
-        </Stat>
+        <Card className="w-full">
+          <CardContent className="p-4 flex flex-row justify-between">
+            <div className="flex items-center">
+              <Button className="h-full">Checkout</Button>
+            </div>
+            <div className=" pt-3 flex flex-col justify-between items-center">
+              <p className="font-medium">Total amount</p>
+              <p className="font-medium">${totalPrice.toFixed(2)}</p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </main>
   );

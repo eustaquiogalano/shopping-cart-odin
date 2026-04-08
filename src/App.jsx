@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router";
 import styles from "./App.module.css";
 import useDataFetcher from "./hooks/useDataFetcher";
+import { Button } from "./components/ui/button";
 
 function App() {
   const {
