@@ -15,7 +15,7 @@ export default function Cart() {
           laptops.map((laptop) => {
             return (
               laptop.addedToCart && (
-                <Card>
+                <Card className=" shrink-0">
                   <CardContent className="p-4">
                     <div className="flex gap-3 items-center">
                       <img
