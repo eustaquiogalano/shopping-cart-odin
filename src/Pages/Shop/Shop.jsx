@@ -21,27 +21,24 @@ export default function Shop() {
 
   return (
     <main className={styles.main}>
-      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] grid-rows-auto  gap-[1rem] h-full p-[1rem]">
+      <div className="grid grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))] auto-rows-min gap-[1rem]  overflow-y-auto min-h-0 flex-1 p-[1rem]">
         {laptops &&
           laptops.map((laptop) => {
             return (
-              <Card className="w-full h-fit overflow-hidden p-0">
+              <Card className="h-full overflow-hidden p-0">
                 <img
                   src={laptop.images[0]}
                   alt=""
                   className="w-full h-[180px] object-cover"
                 />
-                <CardContent className="p-4">
+                <CardContent className="flex flex-col p-4 gap-4 h-full">
                   <div className="flex justify-between items-start">
                     <div>
                       <p className="font-medium">{laptop.title}</p>
-                      {/* <p className="text-sm text-muted-foreground">
-                        {laptop.description}
-                      </p> */}
                     </div>
                     <p className="font-medium">${laptop.price}</p>
                   </div>
-                  <div className="flex gap-2 mt-4">
+                  <div className="flex justify-between gap-1 mt-auto ">
                     <Button className="flex-1">Buy now</Button>
                     <Button
                       variant="outline"
