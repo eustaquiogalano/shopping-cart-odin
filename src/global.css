@@ -6,24 +6,24 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --ultra-light-brown: #fff8f0;
+  /* --ultra-light-brown: #fff8f0;
   --light-brown: #c08552;
   --brown: #8c5a3c;
-  --dark-brown: #4b2e2b;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --dark-brown: #4b2e2b; */
+  --background: #fafaff;
+  --foreground: #30343f;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --primary: #273469;
+  --primary-foreground: #fafaff;
+  --secondary: #e4d9ff;
+  --secondary-foreground: #30343f;
+  --muted: #e4d9ff;
+  --muted-foreground: #30343f;
+  --accent: #1e2749;
+  --accent-foreground: #fafaff;
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
