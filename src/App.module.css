@@ -17,10 +17,10 @@
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.25em;
-  color: var(--dark-brown);
+  color: var(--color-foreground);
 }
 
 .active {
-  background-color: var(--light-brown);
-  color: var(--ultra-light-brown);
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
 }

@@ -9,10 +9,16 @@
 }
 
 .button {
-  background-color: var(--dark-brown);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
   margin-top: 150px;
   padding: 1.5rem;
   border-radius: 4px;
+}
+
+.button:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
 }
 
 .button h1 {

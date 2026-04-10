@@ -39,7 +39,9 @@ export default function Shop() {
                     <p className="font-medium">${laptop.price}</p>
                   </div>
                   <div className="flex justify-between gap-1 mt-auto ">
-                    <Button className="flex-1">Buy now</Button>
+                    <Button variant="default" className="flex-1">
+                      Buy now
+                    </Button>
                     <Button
                       variant="outline"
                       className="flex-1"
