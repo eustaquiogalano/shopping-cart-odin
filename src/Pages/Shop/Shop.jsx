@@ -2,7 +2,6 @@ import { useOutletContext } from "react-router";
 
 import {
   Card,
-  CardAction,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -15,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import styles from "./Shop.module.css";
 
 export default function Shop() {
-  const { laptops, error, addLaptopToCart } = useOutletContext();
+  const { laptops, addLaptopToCart } = useOutletContext();
 
   console.log(laptops);
 
