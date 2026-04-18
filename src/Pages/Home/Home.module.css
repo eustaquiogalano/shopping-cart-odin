@@ -2,6 +2,7 @@
   background-image: url(../../assets/home-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -11,9 +12,10 @@
 .button {
   background-color: var(--color-primary);
   color: var(--color-primary-foreground);
-  margin-top: 150px;
+  margin-top: 50px;
   padding: 1.5rem;
   border-radius: 4px;
+  font-size: 1.5rem;
 }
 
 .button:hover {
