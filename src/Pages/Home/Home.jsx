@@ -1,3 +1,5 @@
+import { useOutletContext } from "react-router";
+
 import { Link } from "react-router";
 import styles from "./Home.module.css";
 import { Badge } from "@/components/ui/badge";
@@ -5,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Smartphone, Laptop, Headphones, Camera } from "lucide-react";
 
 import heroImg from "../../assets/hero.jpg";
+
+import ProductCard from "@/components/FeaturedCard";
 
 const categories = [
   { name: "Laptops", link: "/categories/laptops", iconName: Laptop },
@@ -18,6 +22,8 @@ const categories = [
 ];
 
 export default function Home() {
+  const { laptops } = useOutletContext();
+
   return (
     <main className={styles.homeMain}>
       {/* Hero section */}
@@ -65,6 +71,26 @@ export default function Home() {
               </Button>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Featured Section */}
+      <section className="flex flex-col h-fit gap-[.5rem] w- full">
+        <h3>Featured</h3>
+        <div className="grid grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] auto-rows-min gap-[1rem]  overflow-y-auto min-h-0 flex-1">
+          {laptops &&
+            laptops
+              .slice(0, 4)
+              .map((laptop) => (
+                <ProductCard
+                  key={laptop.id}
+                  image={laptop.thumbnail}
+                  badge="New"
+                  name={laptop.title}
+                  spec={laptop.description}
+                  price={`$${laptop.price.toFixed(2)}`}
+                />
+              ))}
         </div>
       </section>
     </main>
