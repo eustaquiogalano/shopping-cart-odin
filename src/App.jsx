@@ -3,6 +3,8 @@ import styles from "./App.module.css";
 import useDataFetcher from "./hooks/useDataFetcher";
 import { Button } from "./components/ui/button";
 import BottomNav from "./components/BottomNav/BottomNav";
+import { Search, ShoppingBag } from "lucide-react";
+import { Badge } from "./components/ui/badge";
 
 function App() {
   const {
@@ -24,33 +26,16 @@ function App() {
   return (
     <>
       <header className={styles.header}>
-        <nav className={styles.nav}>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `${styles.navLinks} ${isActive ? styles.active : ""}`
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/shop"
-            className={({ isActive }) =>
-              `${styles.navLinks} ${isActive ? styles.active : ""}`
-            }
-          >
-            Shop
-          </NavLink>
-          <NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              `${styles.navLinks} ${isActive ? styles.active : ""}`
-            }
-          >
-            <span>{cartListCount}</span>
-            Cart
-          </NavLink>
-        </nav>
+        <h1 className={styles.title}>Laps.</h1>
+        <div className="flex gap-1 ">
+          <Button variant="secondary">
+            <Search className="" />
+          </Button>
+          <Button variant="secondary">
+            <Badge>{cartListCount}</Badge>
+            <ShoppingBag className="" />
+          </Button>
+        </div>
       </header>
       <Outlet
         context={{
