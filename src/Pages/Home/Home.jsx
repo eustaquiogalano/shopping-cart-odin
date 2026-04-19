@@ -2,8 +2,20 @@ import { Link } from "react-router";
 import styles from "./Home.module.css";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Smartphone, Laptop, Headphones, Camera } from "lucide-react";
 
 import heroImg from "../../assets/hero.jpg";
+
+const categories = [
+  { name: "Laptops", link: "/categories/laptops", iconName: Laptop },
+  {
+    name: "Smartphones",
+    link: "/categories/smartphones",
+    iconName: Smartphone,
+  },
+  { name: "Headphones", link: "/categories/headphones", iconName: Headphones },
+  { name: "Cameras", link: "/categories/cameras", iconName: Camera },
+];
 
 export default function Home() {
   return (
@@ -24,6 +36,28 @@ export default function Home() {
         <div className="flex justify-between">
           <Button variant="default">Shop Now!</Button>
           <Button variant="outline">View Deals</Button>
+        </div>
+      </section>
+
+      {/* Category Section */}
+      <section className="flex flex-col h-fit gap-[.5rem] w- full">
+        <h3>Categories</h3>
+        <div className="flex gap-[.5rem] justify-between ">
+          {categories.map((category) => (
+            <Link
+              className="flex flex-col h-fit "
+              key={category.name}
+              to={category.link}
+            >
+              <Button
+                className="flex flex-col h-fit p-[1rem] text-xs "
+                variant="outline"
+              >
+                <category.iconName className="w-6 h-6" />
+                {category.name}
+              </Button>
+            </Link>
+          ))}
         </div>
       </section>
     </main>
