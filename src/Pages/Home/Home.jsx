@@ -49,7 +49,7 @@ export default function Home() {
       {/* Category Section */}
       <section className="flex flex-col h-fit gap-[.5rem] w- full">
         <h3>Categories</h3>
-        <div className="flex gap-[.5rem] justify-between ">
+        <div className="flex gap-[.5rem] justify-between overflow-x-auto ">
           {categories.map((category) => (
             <Link
               className="flex flex-col h-fit "
