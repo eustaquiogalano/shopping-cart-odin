@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router";
 import styles from "./App.module.css";
 import useDataFetcher from "./hooks/useDataFetcher";
 import { Button } from "./components/ui/button";
+import BottomNav from "./components/BottomNav/BottomNav";
 
 function App() {
   const {
@@ -61,6 +62,7 @@ function App() {
           decrementQuantity,
         }}
       />
+      <BottomNav />
     </>
   );
 }
