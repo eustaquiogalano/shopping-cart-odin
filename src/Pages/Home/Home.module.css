@@ -1,12 +1,7 @@
 .homeMain {
-  background-image: url(../../assets/home-background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 1rem;
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 .button {
