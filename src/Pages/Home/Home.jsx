@@ -9,6 +9,7 @@ import { Smartphone, Laptop, Headphones, Camera } from "lucide-react";
 import heroImg from "../../assets/hero.jpg";
 
 import ProductCard from "@/components/FeaturedCard";
+import PromoBanner from "@/components/PromoBanner";
 
 const categories = [
   { name: "Laptops", link: "/categories/laptops", iconName: Laptop },
@@ -92,6 +93,16 @@ export default function Home() {
                 />
               ))}
         </div>
+      </section>
+
+      {/* Limited Time Section */}
+      <section className="flex flex-col h-fit gap-[.5rem] w- full">
+        <PromoBanner
+          label="Limited time"
+          title="Up to 30% off accessories"
+          description="Cases, cables, chargers and more."
+          cta="Shop deals"
+        />
       </section>
     </main>
   );
