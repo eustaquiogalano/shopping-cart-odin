@@ -76,7 +76,10 @@ export default function Home() {
       </section>
 
       {/* Featured Section */}
-      <section className="flex flex-col h-fit gap-[.5rem] w- full">
+      <section
+        id="featured"
+        className="flex flex-col h-fit gap-[.5rem] w- full"
+      >
         <h3>Featured</h3>
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] auto-rows-min gap-[1rem]  overflow-y-auto min-h-0 flex-1">
           {laptops &&
