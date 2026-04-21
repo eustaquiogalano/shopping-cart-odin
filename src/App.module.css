@@ -1,8 +1,10 @@
 .header {
   padding: 1rem;
   display: flex;
+  margin: 1rem 1rem 0 1rem;
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-primary);
   color: var(--color-primary-foreground);
+  border-radius: 14px;
 }

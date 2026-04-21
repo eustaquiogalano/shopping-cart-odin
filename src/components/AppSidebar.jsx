@@ -16,12 +16,15 @@ const menuItems = [
   { name: "Home", path: "/", icons: Home },
   { name: "Shop", path: "/shop", icons: ShoppingBag },
   { name: "Featured", path: "/#featured", icons: Blocks },
-  { name: "Profile", path: "/profile", icons: User },
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" variant="floating">
+    <Sidebar
+      collapsible="icon"
+      variant="floating"
+      className=" py-[1rem] pl-[1rem] pr-[0rem] rounded-lg"
+    >
       <SidebarHeader>
         <SidebarTrigger />
       </SidebarHeader>
@@ -41,7 +44,16 @@ export function AppSidebar() {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <User />
+              <span>Profile</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
   );
 }
