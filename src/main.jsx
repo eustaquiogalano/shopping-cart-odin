@@ -5,11 +5,14 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import "./global.css";
 
 import routes from "./routes";
+import { SidebarProvider } from "./components/ui/sidebar";
 
 const router = createBrowserRouter(routes);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
-  </StrictMode>
+    <SidebarProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </SidebarProvider>
+  </StrictMode>,
 );

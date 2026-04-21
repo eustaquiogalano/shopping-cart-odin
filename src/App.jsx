@@ -3,8 +3,10 @@ import styles from "./App.module.css";
 import useDataFetcher from "./hooks/useDataFetcher";
 import { Button } from "./components/ui/button";
 import BottomNav from "./components/BottomNav/BottomNav";
-import { Search, ShoppingBag } from "lucide-react";
+import { Search, ShoppingBag, Sidebar } from "lucide-react";
 import { Badge } from "./components/ui/badge";
+import { AppSidebar } from "./components/AppSidebar";
+import { SidebarInset, SidebarTrigger } from "./components/ui/sidebar";
 
 function App() {
   const {
@@ -25,29 +27,32 @@ function App() {
 
   return (
     <>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Laps.</h1>
-        <div className="flex gap-1 ">
-          <Button variant="secondary">
-            <Search className="" />
-          </Button>
-          <Button variant="secondary">
-            <Badge>{cartListCount}</Badge>
-            <ShoppingBag className="" />
-          </Button>
-        </div>
-      </header>
-      <Outlet
-        context={{
-          laptops,
-          totalPrice,
-          error,
-          addLaptopToCart,
-          incrementQuantity,
-          decrementQuantity,
-        }}
-      />
-      <BottomNav />
+      <AppSidebar  />
+      <SidebarInset>
+        <header className={styles.header}>
+          <h1 className={styles.title}>Laps.</h1>
+          <div className="flex gap-1 ">
+            <Button variant="secondary">
+              <Search className="" />
+            </Button>
+            <Button variant="secondary">
+              <Badge>{cartListCount}</Badge>
+              <ShoppingBag className="" />
+            </Button>
+          </div>
+        </header>
+        <Outlet
+          context={{
+            laptops,
+            totalPrice,
+            error,
+            addLaptopToCart,
+            incrementQuantity,
+            decrementQuantity,
+          }}
+        />
+        <BottomNav />
+      </SidebarInset>
     </>
   );
 }
