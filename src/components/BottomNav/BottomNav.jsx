@@ -16,7 +16,7 @@ function BottomNav() {
   }, [hash]);
 
   return (
-    <nav className="flex justify-around gap-[0.25] fixed bottom-0 left-0 right-0 h-14 bg-background border-t border-stone-300 z-10">
+    <nav className="flex justify-around gap-[0.25] fixed bottom-0 left-0 right-0 h-14 bg-background border-t border-stone-300 z-10 sm:hidden">
       <NavLink
         to="/"
         end
