@@ -61,7 +61,7 @@ export default function Home() {
         <div className="flex gap-[.5rem] justify-between overflow-x-auto ">
           {categories.map((category) => (
             <Link
-              className="flex flex-col h-fit "
+              className="flex flex-col h-fit flex-1"
               key={category.name}
               to={category.link}
             >
