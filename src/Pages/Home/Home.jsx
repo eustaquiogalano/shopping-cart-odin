@@ -28,26 +28,28 @@ export default function Home() {
   return (
     <main className={styles.homeMain}>
       {/* Hero section */}
-      <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] w- full border border-stone-300 rounded-xl">
-        <Badge variant="secondary">New Arrivals</Badge>
-        <div className="w-full h-55 overflow-hidden rounded-lg">
+      <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] w-full relative border border-stone-300 rounded-xl overflow-hidden">
+        <Badge variant="secondary" className=" ">
+          New Arrivals
+        </Badge>
+        <div className="w-full h-55 overflow-hidden rounded-lg md:absolute md:right-[1.5rem] md:top-1/2 md:-translate-y-1/2 md:w-[40%] md:h-[70%]">
           <img
             src={heroImg}
             alt="Laptop in a modern workspace"
             className="w-full h-full object-cover"
           />
         </div>
-        <div>
+        <div className="md:w-[50%] ">
           <h2 className="text-2xl">Tech that fits you everyday.</h2>
           <p className="text-xs text-muted-foreground">
             Curate eletronics. Simple prices. Fast shipping.
           </p>
         </div>
-        <div className="flex justify-between gap-[.75rem]">
-          <Button variant="default" className="flex-1">
+        <div className="flex justify-between gap-[.75rem] md:w-[50%] ">
+          <Button variant="default" className="flex-1 md:h-[3rem]">
             Shop Now!
           </Button>
-          <Button variant="outline" className="flex-1">
+          <Button variant="outline" className="flex-1 md:h-[3rem]">
             View Deals
           </Button>
         </div>
