@@ -69,8 +69,8 @@ export default function Cart() {
           })}
       </div>
       <div className={styles.cartTotalAmount}>
-        <Card className="w-full">
-          <CardContent className="p-4 flex flex-row justify-between">
+        <Card className="w-full h-fit p-[.5rem]">
+          <CardContent className="p-[.5rem] flex flex-row justify-between">
             <div className="flex items-center">
               <Button className="h-full">Checkout</Button>
             </div>

@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 import useDataFetcher from "./hooks/useDataFetcher";
 import { Button } from "./components/ui/button";
 import BottomNav from "./components/BottomNav/BottomNav";
-import { Search, ShoppingBag, Sidebar } from "lucide-react";
+import { Search, ShoppingBag, ShoppingCart, Sidebar } from "lucide-react";
 import { Badge } from "./components/ui/badge";
 import { AppSidebar } from "./components/AppSidebar";
 import { SidebarInset, SidebarTrigger } from "./components/ui/sidebar";
@@ -35,9 +35,11 @@ function App() {
             <Button variant="secondary">
               <Search className="" />
             </Button>
-            <Button variant="secondary">
-              <Badge>{cartListCount}</Badge>
-              <ShoppingBag className="" />
+            <Button asChild variant="secondary">
+              <NavLink to="/cart">
+                <Badge>{cartListCount}</Badge>
+                <ShoppingCart className="" />
+              </NavLink>
             </Button>
           </div>
         </header>
