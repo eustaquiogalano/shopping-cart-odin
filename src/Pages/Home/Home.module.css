@@ -1,9 +1,8 @@
 .homeMain {
-  padding: 1rem 1rem calc(56px + 1rem) 1rem;
   flex: 1;
-  /* display: flex;
-  gap: 2rem;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .button {

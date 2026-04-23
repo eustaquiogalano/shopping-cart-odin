@@ -27,9 +27,9 @@ export default function Home() {
 
   return (
     <main className={styles.homeMain}>
-      <div className="max-w-4xl mx-auto flex flex-col gap-4">
+      <div className="max-w-4xl mx-auto flex flex-1 flex-col gap-4 overflow-y-auto w-full p-[1rem] pb-[calc(56px_+_2rem)] md:p-[1rem] md:pb-0 ">
         {/* Hero section */}
-        <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border border-stone-300 rounded-xl overflow-hidden">
+        <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border border-stone-300 rounded-xl ">
           <Badge variant="secondary" className=" ">
             New Arrivals
           </Badge>
