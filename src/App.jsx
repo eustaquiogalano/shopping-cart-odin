@@ -32,12 +32,12 @@ function App() {
         <header className={styles.header}>
           <h1 className={styles.title}>Laps.</h1>
           <div className="flex gap-1 ">
-            <Button variant="secondary">
+            <Button variant="default">
               <Search className="" />
             </Button>
-            <Button asChild variant="secondary">
+            <Button asChild variant="default">
               <NavLink to="/cart">
-                <Badge>{cartListCount}</Badge>
+                <Badge variant="secondary">{cartListCount}</Badge>
                 <ShoppingCart className="" />
               </NavLink>
             </Button>

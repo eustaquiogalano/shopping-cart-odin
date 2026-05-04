@@ -4,7 +4,7 @@
   margin: 1rem 1rem 0 1rem;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
   border-radius: 14px;
 }

@@ -29,8 +29,8 @@ export default function Home() {
     <main className={styles.homeMain}>
       <div className="max-w-4xl mx-auto flex flex-1 flex-col gap-4 overflow-y-auto w-full p-[1rem] pb-[calc(56px_+_2rem)] md:p-[1rem] md:pb-0 ">
         {/* Hero section */}
-        <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border border-stone-300 rounded-xl ">
-          <Badge variant="secondary" className=" ">
+        <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border rounded-xl bg-secondary text-secondary-foreground">
+          <Badge className="bg-accent text-accent-foreground">
             New Arrivals
           </Badge>
           <div className="w-full h-55 overflow-hidden rounded-lg md:absolute md:right-[1.5rem] md:top-1/2 md:-translate-y-1/2 md:w-[40%] md:h-[70%]">
@@ -70,7 +70,7 @@ export default function Home() {
               >
                 <Button
                   className="flex flex-col h-fit p-[1rem] text-xs "
-                  variant="outline"
+                  variant="secondary"
                 >
                   <category.iconName className="w-6 h-6" />
                   {category.name}
@@ -104,7 +104,7 @@ export default function Home() {
         </section>
 
         {/* Limited Time Section */}
-        <section className="flex flex-col h-fit gap-[.5rem] w- full">
+        <section className="flex flex-col h-fit gap-[.5rem]">
           <PromoBanner
             label="Limited time"
             title="Up to 30% off accessories"
