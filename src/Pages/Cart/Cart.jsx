@@ -1,7 +1,13 @@
 import styles from "./Cart.module.css";
 import { useOutletContext } from "react-router";
 
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export default function Cart() {
@@ -21,7 +27,7 @@ export default function Cart() {
                       <img
                         src={laptop.images[2]}
                         alt={laptop.title}
-                        className="w-18 h-18 object-cover rounded-md flex-shrink-0"
+                        className="w-18 h-18 object-cover rounded-md flex-shrink-0 "
                       />
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-start">
@@ -68,17 +74,38 @@ export default function Cart() {
             );
           })}
       </div>
+
       <div className={styles.cartTotalAmount}>
-        <Card className="w-full h-fit p-[.5rem]">
-          <CardContent className="p-[.5rem] flex flex-row justify-between">
-            <div className="flex items-center">
-              <Button className="h-full">Checkout</Button>
+        <Card className="w-full h-fit">
+          <CardHeader>
+            <CardTitle>Order Summary</CardTitle>
+          </CardHeader>
+
+          <CardContent className="p-[1rem] flex flex-col justify-between space-y-4">
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Original price:</span>
+              <span>${totalPrice}</span>
             </div>
-            <div className=" pt-3 flex flex-col justify-between items-center">
-              <p className="font-medium">Total amount</p>
-              <p className="font-medium">${totalPrice.toFixed(2)}</p>
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Discount:</span>
+              <span>${totalPrice * 0}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Shipping fee:</span>
+              <span>$50</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-muted-foreground">Tax:</span>
+              <span>${(totalPrice * 0.12).toFixed(2)}</span>
             </div>
           </CardContent>
+          <CardFooter className="flex flex-col gap-4">
+            <div className="flex justify-between w-full text-base">
+              <span className="">Total:</span>
+              <span>${totalPrice}</span>
+            </div>
+            <Button className="w-full">Checkout</Button>
+          </CardFooter>
         </Card>
       </div>
     </main>
