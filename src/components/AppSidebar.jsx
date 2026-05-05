@@ -47,9 +47,11 @@ export function AppSidebar() {
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton>
-              <User />
-              <span>Profile</span>
+            <SidebarMenuButton asChild>
+              <NavLink to="/profile">
+                <User />
+                <span>Profile</span>
+              </NavLink>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
