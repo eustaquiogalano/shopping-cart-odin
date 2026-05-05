@@ -19,7 +19,7 @@ function BottomNav() {
     <div className="fixed bottom-0 left-0 right-0 h-fit p-4 bg-transparent">
       <nav
         className="flex justify-around gap-[0.25]  bg-background 
-      border border-stone-300 z-10 rounded-xl md:hidden"
+      border z-10 rounded-xl md:hidden"
       >
         <NavLink
           to="/"
