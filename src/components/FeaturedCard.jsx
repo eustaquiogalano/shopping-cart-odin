@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-export default function ProductCard({ image, badge, name, spec, price }) {
+export default function FeaturedCard({ image, badge, name, spec, price }) {
   return (
     <div className="bg-card text-secondary-foreground border  rounded-xl overflow-hidden">
       <div className="h-28  bg-secondary flex items-center justify-center">

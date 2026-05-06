@@ -8,8 +8,8 @@ import { Smartphone, Laptop, Headphones, Camera } from "lucide-react";
 
 import heroImg from "../../assets/hero.jpg";
 
-import ProductCard from "@/components/FeaturedCard";
 import PromoBanner from "@/components/PromoBanner";
+import FeaturedCard from "@/components/FeaturedCard";
 
 const categories = [
   { name: "Laptops", link: "/categories/laptops", iconName: Laptop },
@@ -91,7 +91,7 @@ export default function Home() {
               laptops
                 .slice(0, 4)
                 .map((laptop) => (
-                  <ProductCard
+                  <FeaturedCard
                     key={laptop.id}
                     image={laptop.thumbnail}
                     badge="New"
