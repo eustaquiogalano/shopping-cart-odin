@@ -14,7 +14,7 @@ import { NavLink } from "react-router";
 
 const menuItems = [
   { name: "Home", path: "/", icons: Home },
-  { name: "Shop", path: "/shop", icons: ShoppingBag },
+  { name: "Store", path: "/shop", icons: ShoppingBag },
   { name: "Featured", path: "/#featured", icons: Blocks },
 ];
 

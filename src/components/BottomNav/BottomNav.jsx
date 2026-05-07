@@ -38,8 +38,8 @@ function BottomNav() {
             `${styles.navLinks} ${isActive ? styles.active : ""}`
           }
         >
-          <Search strokeWidth={1.5} className="w-[1.20rem] h-[1.20rem]" />
-          Search
+          <ShoppingBag strokeWidth={1.5} className="w-[1.20rem] h-[1.20rem]" />
+          Store
         </NavLink>
 
         <Button
