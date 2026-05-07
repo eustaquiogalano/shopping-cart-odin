@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <AppSidebar />
-      <SidebarInset className="lg:p-[1rem] lg:pt-0 lg:gap-[1rem]">
+      <SidebarInset className="lg:p-[1rem] lg:pt-0 lg:gap-[1rem] overflow-hidden">
         <header className={styles.header}>
           <h1 className={styles.title}>Laps.</h1>
           <div className="flex gap-1 items-center">
