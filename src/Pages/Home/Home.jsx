@@ -29,30 +29,36 @@ export default function Home() {
     <main className={styles.homeMain}>
       <div className="max-w-[1920px] mx-auto flex flex-1 flex-col gap-4 overflow-y-auto w-full p-[1rem] pb-[calc(56px_+_2rem)] md:p-[1rem] md:pb-0 ">
         {/* Hero section */}
-        <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border rounded-xl bg-secondary text-secondary-foreground">
-          <Badge className="bg-accent text-accent-foreground">
+        <section className="flex flex-col h-fit p-[1.5rem] lg:p-[2.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border rounded-xl bg-secondary text-secondary-foreground">
+          <Badge className="bg-accent text-accent-foreground text-xl">
             New Arrivals
           </Badge>
-          <div className="w-full h-55 overflow-hidden rounded-lg md:absolute md:right-[1.5rem] md:top-1/2 md:-translate-y-1/2 md:w-[40%] md:h-[70%]">
+          <div className="w-full h-55 overflow-hidden rounded-lg md:absolute md:right-[1.5rem] md:top-1/2 md:-translate-y-1/2 md:w-[40%] md:h-[70%] lg:right-[2.5rem]">
             <img
               src={heroImg}
               alt="Laptop in a modern workspace"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="md:w-[50%] ">
-            <h2 className="text-2xl lg:text-4xl">
+          <div className="md:w-[50%]">
+            <h2 className="text-2xl lg:text-5xl">
               Tech that fits you everyday.
             </h2>
-            <p className="text-xs lg:text-sm text-muted-foreground">
+            <p className="text-xs lg:text-xl text-muted-foreground">
               Curate eletronics. Simple prices. Fast shipping.
             </p>
           </div>
           <div className="flex justify-between gap-[.75rem] md:w-[50%] ">
-            <Button variant="default" className="flex-1 md:h-[3rem]">
+            <Button
+              variant="default"
+              className="flex-1 lg:text-xl lg:p-[1.5rem]"
+            >
               Shop Now!
             </Button>
-            <Button variant="outline" className="flex-1 md:h-[3rem]">
+            <Button
+              variant="outline"
+              className="flex-1 lg:text-xl lg:p-[1.5rem]"
+            >
               View Deals
             </Button>
           </div>
