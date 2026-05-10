@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <main className={styles.homeMain}>
-      <div className="max-w-4xl mx-auto flex flex-1 flex-col gap-4 overflow-y-auto w-full p-[1rem] pb-[calc(56px_+_2rem)] md:p-[1rem] md:pb-0 ">
+      <div className="max-w-[1920px] mx-auto flex flex-1 flex-col gap-4 overflow-y-auto w-full p-[1rem] pb-[calc(56px_+_2rem)] md:p-[1rem] md:pb-0 ">
         {/* Hero section */}
         <section className="flex flex-col h-fit p-[1.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border rounded-xl bg-secondary text-secondary-foreground">
           <Badge className="bg-accent text-accent-foreground">
