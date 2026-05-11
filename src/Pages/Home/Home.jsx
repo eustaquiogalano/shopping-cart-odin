@@ -92,7 +92,7 @@ export default function Home() {
           className="flex flex-col h-fit gap-[.5rem] w- full"
         >
           <h3>Featured</h3>
-          <div className="grid grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] auto-rows-min gap-[1rem]  overflow-y-auto min-h-0 flex-1">
+          <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] auto-rows-min gap-[1rem]  overflow-y-auto min-h-0 flex-1">
             {laptops &&
               laptops
                 .slice(0, 4)
