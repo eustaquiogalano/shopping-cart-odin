@@ -30,7 +30,7 @@ export default function Home() {
       <div className="max-w-[1920px] mx-auto flex flex-1 flex-col gap-4 overflow-y-auto w-full p-[1rem] pb-[calc(56px_+_2rem)] md:p-[1rem] md:pb-0 ">
         {/* Hero section */}
         <section className="flex flex-col h-fit p-[1.5rem] lg:p-[2.5rem] gap-[.75rem] lg:gap-[1.5rem] w-full relative border rounded-xl bg-secondary text-secondary-foreground">
-          <Badge className="bg-accent text-accent-foreground text-xl">
+          <Badge className="bg-accent text-accent-foreground lg:text-xl lg:py-[13px] lg:px-[16px]">
             New Arrivals
           </Badge>
           <div className="w-full h-55 overflow-hidden rounded-lg md:absolute md:right-[1.5rem] md:top-1/2 md:-translate-y-1/2 md:w-[40%] md:h-[70%] lg:right-[2.5rem]">
