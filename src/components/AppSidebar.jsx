@@ -13,9 +13,9 @@ import { Blocks, Home, ShoppingBag, User } from "lucide-react";
 import { NavLink } from "react-router";
 
 const menuItems = [
-  { name: "Home", path: "/", icons: Home },
-  { name: "Store", path: "/shop", icons: ShoppingBag },
-  { name: "Featured", path: "/#featured", icons: Blocks },
+  { name: "Home", path: "/home", icons: Home },
+  { name: "Store", path: "/home/shop", icons: ShoppingBag },
+  { name: "Featured", path: "/home/#featured", icons: Blocks },
 ];
 
 export function AppSidebar() {
